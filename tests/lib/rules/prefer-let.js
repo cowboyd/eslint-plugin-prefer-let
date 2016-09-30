@@ -14,7 +14,8 @@ var RuleTester = require("eslint").RuleTester;
 
 RuleTester.setDefaultConfig({
   parserOptions: {
-    ecmaVersion: 6
+    ecmaVersion: 6,
+    sourceType: "module"
   }
 });
 
@@ -32,6 +33,9 @@ ruleTester.run("prefer-let", rule, {
     },
     {
       code: "const { foo, bar } = {};"
+    },
+    {
+      code: `export const AlsoObject = Object;`
     }
   ],
 
