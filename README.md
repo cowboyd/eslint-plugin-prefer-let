@@ -1,12 +1,49 @@
 # eslint-plugin-prefer-let
 
-Unblock "constipated" code by preferring `let` when binding names to values.
+[![Build Status](https://travis-ci.org/cowboyd/eslint-plugin-prefer-let.svg?branch=master)](https://travis-ci.org/cowboyd/eslint-plugin-prefer-let)
 
-`let` has deep roots in both symbolic logic and functional programming, whereas
-`const` derives from an inherently imperative paradigm.
+An eslint plugin to encourage semantic of usage of `let` and `const`.
 
-The `prefer-let` rules encourages thinking about names and values rather than
-references. It also reads as English.
+Things being basically equal, code should speak to humans first, and
+computers second. As such, JavaScript codebases should follow the
+long-standing conventions set forth by both formal symbolic logic and
+the practice of functional programming.
+
+Usage of the `const` keyword to bind an _intermediate_ value of a
+computation places emphasis on the compiler and and its role in
+ensuring that a _reference_ never changes. By contrast using `let` in
+the same situation reads, in plain English, the programmer's intent to
+declare a name value binding.
+
+It is this plugin's opinion that preventing reassignment of `let`
+bindings is better accomplished as a linting rule.
+
+`const` bindings _are_ allowed at the top-level of a module's scope so
+that it can represent a value that is truly a constant,
+dependency-free values, such as `π`, `ℯ`, etc...
+
+
+Good:
+
+``` javascript
+const PI = 3.14;
+
+function area(radius) {
+  let r2 = radius * radius;
+  return PI * r2;
+}
+
+```
+
+Bad:
+
+``` javascript
+function volume(radius) {
+  const a = area(radius);
+  return a * radius / 2
+}
+
+```
 
 ## Installation
 
@@ -42,7 +79,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "prefer-let/rule-name": 2
+        "prefer-let/prefer-let": 2
     }
 }
 ```
