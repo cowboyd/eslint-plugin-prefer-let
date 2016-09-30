@@ -19,8 +19,8 @@ It is this plugin's opinion that preventing reassignment of `let`
 bindings is better accomplished as a linting rule.
 
 `const` bindings _are_ allowed at the top-level of a module's scope so
-that it can represent a value that is truly a constant,
-dependency-free values, such as `π`, `ℯ`, etc...
+that it can represent a value that is a true, dependency-free constant
+such as `π`, `ℯ`, etc...
 
 
 Good:
