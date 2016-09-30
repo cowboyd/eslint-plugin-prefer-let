@@ -1,0 +1,26 @@
+{
+  "name": "eslint-plugin-prefer-let",
+  "version": "0.0.0",
+  "description": "Rule to prefer using `let` to bind names to values",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Charles Lowell",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
