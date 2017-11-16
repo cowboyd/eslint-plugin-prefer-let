@@ -36,6 +36,15 @@ ruleTester.run("prefer-let", rule, {
     },
     {
       code: `export const AlsoObject = Object;`
+    },
+    {
+      parserOptions: {
+        sourceType: "script"
+      },
+      env: {
+        node: true
+      },
+      code: "const PI = 3.14;"
     }
   ],
 
@@ -72,6 +81,19 @@ ruleTester.run("prefer-let", rule, {
       code: "function y() { var { x, y } = {}; }",
       errors: [{
         message: "prefer `let` over `var` to declare value bindings",
+        type: "VariableDeclaration"
+      }]
+    },
+    {
+      parserOptions: {
+        sourceType: "script"
+      },
+      env: {
+        node: true
+      },
+      code: "function y() { const x = 'y'; return x; }",
+      errors: [{
+        message: "`const` declaration outside top-level scope",
         type: "VariableDeclaration"
       }]
     }
