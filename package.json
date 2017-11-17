@@ -8,6 +8,7 @@
     "eslint-plugin"
   ],
   "author": "Charles Lowell",
+  "homepage": "https://github.com/cowboyd/eslint-plugin-prefer-let",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
