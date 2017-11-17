@@ -1,5 +1,6 @@
 # eslint-plugin-prefer-let
 
+[![npm version](https://badge.fury.io/js/eslint-plugin-prefer-let.svg)](https://badge.fury.io/js/eslint-plugin-prefer-let)
 [![Build Status](https://travis-ci.org/cowboyd/eslint-plugin-prefer-let.svg?branch=master)](https://travis-ci.org/cowboyd/eslint-plugin-prefer-let)
 
 An eslint plugin to encourage semantic of usage of `let` and `const`.
