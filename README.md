@@ -85,6 +85,11 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
+### Options
+
+* `"ignoreModules": true` allow `const foo = require('bar');` at any scope
+  * Sometimes you may want to lazily `require` a module in a function so it doesn't slow down your boot times. Use this option if you want to use `const` for these imports.
+
 ### Possible Conflicts
 
 This plugin may conflict with other plugins or configs that set `eslint prefer-const`. You can configure the rules to avoid this:
