@@ -51,6 +51,7 @@ ruleTester.run("prefer-let", rule, {
   invalid: [
     {
       code: "function y() { const x = 'y'; return x; }",
+      output: "function y() { let x = 'y'; return x; }",
       errors: [{
         message: "`const` declaration outside top-level scope",
         type: "VariableDeclaration"
@@ -58,6 +59,7 @@ ruleTester.run("prefer-let", rule, {
     },
     {
       code: "function y() { const {x, y} = {x: 'x', y: 'y'}}",
+      output: "function y() { let {x, y} = {x: 'x', y: 'y'}}",
       errors: [{
         message: "`const` declaration outside top-level scope",
         type: "VariableDeclaration"
@@ -92,6 +94,7 @@ ruleTester.run("prefer-let", rule, {
         node: true
       },
       code: "function y() { const x = 'y'; return x; }",
+      output: "function y() { let x = 'y'; return x; }",
       errors: [{
         message: "`const` declaration outside top-level scope",
         type: "VariableDeclaration"
