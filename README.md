@@ -84,3 +84,16 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
+
+### Possible Conflicts
+
+This plugin may conflict with other plugins or configs that set `eslint prefer-const`. You can configure the rules to avoid this:
+
+```json
+{
+    "rules": {
+        "prefer-let/prefer-let": 2,
+        "prefer-const": "off"
+    }
+}
+```
