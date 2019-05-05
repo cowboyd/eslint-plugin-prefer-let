@@ -17,6 +17,7 @@
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "eslint": "^3.5.0",
     "mocha": "^2.4.5"
   },
